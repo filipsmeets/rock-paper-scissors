@@ -11,11 +11,15 @@ let computerChoice = computersPlay();
 console.log(computerChoice);
 
 // Ask player for rock, paper or scissors
-let playerChoice = prompt('Choose between rock, paper or scissors').toLowerCase;
+let playerChoice = playerChoice = (prompt('Choose between rock, paper or scissors')).toLowerCase();
 
-if (playerChoice = null) {
-    alert('Input should be rock, paper or scissors.')
-    playerChoice = prompt('Choose between rock, paper or scissors').toLowerCase;
+if (!playerChoice) {
+    alert('Wrong input.');
+    playerChoice = (prompt('Choose between rock, paper or scissors')).toLowerCase();
+}
+else if (playerChoice !== 'rock' || playerChoice !== 'paper' || playerChoice !== 'scissors') {
+    alert('Wrong input.');
+    playerChoice = (prompt('Choose between rock, paper or scissors')).toLowerCase();
 }
 
 console.log(playerChoice);
