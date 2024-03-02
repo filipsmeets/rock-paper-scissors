@@ -2,29 +2,37 @@
 let choiceArray = ['rock','paper','scissors'];
 
 // Create function for computer to randomly choose rock, paper or scissors
-function computersPlay () {
+function computersPlay() {
     return choiceArray[Math.floor(Math.random() * choiceArray.length)];
 }
 
-// Declare variable to store computer's choice
+// Declare variable and store computer's choice
 let computerChoice = computersPlay();
 console.log(computerChoice);
 
-// Ask player for rock, paper or scissors
-let playerChoice = playerChoice = (prompt('Choose between rock, paper or scissors')).toLowerCase();
-
-if (!playerChoice) {
-    alert('Wrong input.');
-    playerChoice = (prompt('Choose between rock, paper or scissors')).toLowerCase();
-}
-else if (playerChoice !== 'rock' || playerChoice !== 'paper' || playerChoice !== 'scissors') {
-    alert('Wrong input.');
-    playerChoice = (prompt('Choose between rock, paper or scissors')).toLowerCase();
+// Create function to ask player to choose rock, paper or scissors
+function playersPlay() {
+    return prompt('Rock, paper or scissors?')
 }
 
-console.log(playerChoice);
+// Declare variable and store player's choice
+let playerChoice = playersPlay();
 
-// Save player's choice in variable
+// Test player input for correct response.
+// Repeat until correct response
+if (playerChoice.toLowerCase() === '') {
+    console.log('No input')
+} else if (playerChoice.toLowerCase() === 'rock') {
+    console.log('rock')
+} else if (playerChoice.toLowerCase() === 'paper') {
+    console.log('paper')
+} else if (playerChoice.toLowerCase() === 'scissors') {
+    console.log('scissors')
+}
+else {
+    console.log('Wrong input');
+}
+
 // Create function to compare computer's choice vs player's choice
 // If same then tie
 // If rock vs paper, rock wins
